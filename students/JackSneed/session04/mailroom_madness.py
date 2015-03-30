@@ -8,31 +8,14 @@ to the pseudocode and flow chart you created last session.
 -For extra fun, see if you can use a file to preserve the donation list and
 changes made to it while the program is running.
 """
-"""The script should have a data structure that holds a list of your donors and
-a history of the amounts they have donated.
--When run, the script should prompt the user to choose from a menu of 2
-actions: ‘Send a Thank You’ or ‘Create a Report’.
--If the user selects ‘Send a Thank You’, prompt for a Full Name.
--If the user types ‘list’, show them a list of the donor names and re-prompt
--If the user types a name not in the list, add that name to the data structure
-and use it.
--If the user types a name in the list, use it.
--Once a name has been selected, prompt for a donation amount.
--Verify that the amount is in fact a number, and re-prompt if it isn’t.
--Once an amount has been given, add that amount to the donation history of the
-selected user.
--Finally, use string formatting to compose an email thanking the donor for their
-generous donation. Print the email to the terminal and return to the original
-prompt.
-"""
 
-donors = [u"Rodney Dangerfield", u"Margret Thatcher", u"William Shakespeare",
-          u"Harriet Tubman"]
-list = donors
-t_donations = [18000, 23000, 5000, 22000]
+
+
+donors = dict = {u"Rodney Dangerfield": 18000, u"Margret Thatcher": 23000,\
+                u"William Shakespeare": 5000, u"Harriet Tubman": 22000}
+
 n_donations = [5, 7, 2, 6]
-a_donations = [t_donations[0]/n_donations[0], t_donations[1]/n_donations[1],
-               t_donations[2]/n_donations[2], t_donations[3]/n_donations[3]]
+
 
 def safe_input(key):
     try:
@@ -60,13 +43,28 @@ def thank_you():
     gotmail = raw_input(u"Enter donor's full name or type (list): ")
 
     for i in donors:
-        if i == gotmail:
-            d_amount = int(raw_input(u"Enter donation amount: "))
-            if d_amount != int:
-                print("Please enter a whole number. Ex: 25")
+        if gotmail in donors.keys():
+            add_donation()
+        else:
+            gotmail == "list"
+            print donors.keys()
+            thank_you()
 
-        elif gotmail == "list":
-            print donors
+
+def add_donation():
+
+    d_amount = round(float(raw_input(u"Enter donation amount Ex: 25.00: ")))
+    while True:
+        if type(d_amount) == float:
+            d_amount.append.gotmail
             break
+
+        else:
+            print("Please enter a number.")
+            add_donation()
+
+def donor_report():
+    pass
+
 
 start_program()
