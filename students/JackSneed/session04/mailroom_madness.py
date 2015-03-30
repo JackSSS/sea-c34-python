@@ -11,10 +11,8 @@ changes made to it while the program is running.
 
 
 
-donors = dict = {u"Rodney Dangerfield": 18000, u"Margret Thatcher": 23000,\
-                u"William Shakespeare": 5000, u"Harriet Tubman": 22000}
-
-n_donations = [5, 7, 2, 6]
+donors = dict = {u"Rodney Dangerfield": [9000], u"Margret Thatcher": [23000],\
+                u"William Shakespeare": [5000], u"Harriet Tubman": [22000]}
 
 
 def safe_input(key):
@@ -40,13 +38,13 @@ def start_program():
 
 def thank_you():
 
-    gotmail = raw_input(u"Enter donor's full name or type (list): ")
+    thank_you.gotmail = raw_input(u"Enter donor's full name or type (list): ")
 
     for i in donors:
-        if gotmail in donors.keys():
+        if thank_you.gotmail in donors.keys():
             add_donation()
         else:
-            gotmail == "list"
+            thank_you.gotmail == "list"
             print donors.keys()
             thank_you()
 
@@ -54,14 +52,13 @@ def thank_you():
 def add_donation():
 
     d_amount = round(float(raw_input(u"Enter donation amount Ex: 25.00: ")))
-    while True:
-        if type(d_amount) == float:
-            d_amount.append.gotmail
-            break
+    if type(d_amount) == float:
+        donors[thank_you.gotmail].append([d_amount])
+        start_program()
+    else:
+        print("Please enter a number.")
+        add_donation()
 
-        else:
-            print("Please enter a number.")
-            add_donation()
 
 def donor_report():
     pass
