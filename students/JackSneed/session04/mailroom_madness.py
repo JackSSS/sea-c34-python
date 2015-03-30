@@ -26,11 +26,13 @@ generous donation. Print the email to the terminal and return to the original
 prompt.
 """
 
-donors = [u"Rodney Dangerfield", u"Margret Thatcher", u"William Shakespeare", u"Harriet Tubman"]
+donors = [u"Rodney Dangerfield", u"Margret Thatcher", u"William Shakespeare",
+          u"Harriet Tubman"]
 list = donors
-total_donations = [18000, 23000, 5000, 22000]
-num_donations = [5, 7, 2, 6]
-avg_donations = []
+t_donations = [18000, 23000, 5000, 22000]
+n_donations = [5, 7, 2, 6]
+a_donations = [t_donations[0]/n_donations[0], t_donations[1]/n_donations[1],
+               t_donations[2]/n_donations[2], t_donations[3]/n_donations[3]]
 
 def safe_input(key):
     try:
@@ -38,3 +40,18 @@ def safe_input(key):
     except (EOFError, KeyboardInterrupt):
         input_error = None
     return input_error
+
+
+def start_program():
+
+    menu = raw_input(u'Enter "Send a Thank You" or "Create a Report": ')
+    if menu == "Send a Thank You":
+        gotmail = raw_input(u"Enter donors full name: ")
+        for i in donors:
+            if i == gotmail:
+                print i
+
+start_program()
+
+
+
