@@ -44,14 +44,29 @@ def safe_input(key):
 
 def start_program():
 
-    menu = raw_input(u'Enter "Send a Thank You" or "Create a Report": ')
-    if menu == "Send a Thank You":
-        gotmail = raw_input(u"Enter donors full name: ")
-        for i in donors:
-            if i == gotmail:
-                print i
+    menu = raw_input(u'Enter "Send a Thank You", "Create a Report" or "Ouit":')
+
+    while True:
+        if menu == "Send a Thank You":
+            thank_you()
+        elif menu == "Create a Report":
+            donor_report()
+        else:
+            quit()
+
+
+def thank_you():
+
+    gotmail = raw_input(u"Enter donor's full name or type (list): ")
+
+    for i in donors:
+        if i == gotmail:
+            d_amount = int(raw_input(u"Enter donation amount: "))
+            if d_amount != int:
+                print("Please enter a whole number. Ex: 25")
+
+        elif gotmail == "list":
+            print donors
+            break
 
 start_program()
-
-
-
