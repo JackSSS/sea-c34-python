@@ -1,13 +1,6 @@
 #!/usr/bin/env python
-"""Using all you’ve learned so far, complete your mailroom program according
-to the pseudocode and flow chart you created last session.
--use dicts where appropriate
--see if you can use a dict to switch between the users selections
--Try to use a dict and the .format() method to do the letter as one big
- template – rather than building up a big string in parts.
--For extra fun, see if you can use a file to preserve the donation list and
-changes made to it while the program is running.
-"""
+
+
 
 
 
@@ -26,6 +19,8 @@ def safe_input(key):
 
 
 def start_program():
+    """Creates selection menu"""
+
 
     menu = raw_input(u'Enter "Send a Thank You", "Create a Report" or "Ouit":')
 
@@ -39,6 +34,8 @@ def start_program():
 
 
 def thank_you():
+    """Creates thank you letter menu"""
+
 
     thank_you.gotmail = raw_input(u"Enter donor's full name or type (list): ")
 
@@ -52,6 +49,8 @@ def thank_you():
 
 
 def add_donation():
+    """Adds donation amount and checks if a number"""
+
 
     add_donation.amount = (float(raw_input(u"Enter donation amount Ex:\n\
     25.00: ")))
@@ -64,19 +63,42 @@ def add_donation():
         add_donation()
 
 def letter():
+    """Generates thank you letter with donor name and amount"""
 
-    welcome =  u"\n\nDear {},\n \n\nThank you for the donation, of ${}!\n\
+
+    thanks =  u"\n\nDear {},\n \n\nThank you for the donation, of ${}!\n\
     \nYour continued support is greatly appreciated.\n\
-    \nPlease retain this letter for tax pruposes.\n\n\
+    \nPlease retain this letter for tax purposes.\n\n\
     \nYours truly,\n\
-    \nThe Foundation".format(thank_you.gotmail,\
-    add_donation.amount)
+    \nThe Foundation\n".format(thank_you.gotmail, add_donation.amount)
 
-    print(welcome)
+    print(thanks)
     start_program()
 
 def donor_report():
-    pass
+    """Creates a report with total historical donation amount. Including donor
+    Name, total donated, number of donations and average donation amount as
+    values in each row.
+    """
+
+
+    report = []
+
+    for name, amount in donors.items():
+        total_donations = sum(amount)
+        num_donations = len(amount)
+        avg_donations = (total_donations/num_donations)
+        report.append((name, total_donations, num_donations, avg_donations))
+
+    for row in report:
+        print("{:20} {:20} {:20} {:20}\n".format(
+        "Name", "Total Donations", "Times Donated",
+        "Avgerage Donation"))
+
+        print("{:20} {:<20} {:<20} {:<20}".format(
+              row[0], row[1], row[2], row[3]))
+
+    start_program()
 
 
 start_program()
