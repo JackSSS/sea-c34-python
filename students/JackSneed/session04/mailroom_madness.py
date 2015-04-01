@@ -112,5 +112,5 @@ def quit():
     print("Enter 'ctrl + d' to end this program.")
     start_program()
 
-safe_input()
+
 start_program()
