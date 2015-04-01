@@ -30,6 +30,7 @@ def start_program():
         elif menu == u"Create a Report":
             donor_report()
         else:
+            menu == u"Quit"
             quit()
 
 
@@ -42,6 +43,12 @@ def thank_you():
     for i in donors:
         if thank_you.gotmail in donors.keys():
             add_donation()
+            if thank_you.gotmail not in donors.keys():
+                donors[thank_you.gotmail]
+                print(u"This new donor will be added. Re-enter new donor name\
+                      to add their donotion.")
+                thank_you()
+
         else:
             thank_you.gotmail == u"list"
             print donors.keys()
@@ -100,5 +107,10 @@ def donor_report():
 
     start_program()
 
+def quit():
 
+    print("Enter 'ctrl + d' to end this program.")
+    start_program()
+
+safe_input()
 start_program()
