@@ -6,6 +6,6 @@ def count_evens(nums):
     return len([even for even in nums if even % 2 == 0])
 
 if __name__ == '__main__':
-    print "Then number of evens is: {}".format(count_evens([2, 1, 2, 3, 4]))
-    print "Then number of evens is: {}".format(count_evens([2, 2, 0]))
-    print "Then number of evens is: {}".format(count_evens([1, 3, 5]))
+    print "The number of evens is: {}".format(count_evens([2, 1, 2, 3, 4]))
+    print "The number of evens is: {}".format(count_evens([2, 2, 0]))
+    print "The number of evens is: {}".format(count_evens([1, 3, 5]))
