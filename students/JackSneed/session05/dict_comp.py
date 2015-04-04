@@ -34,15 +34,13 @@ def problem4():
     keys but with the number of ‘a’s in each value.
     """
 
-    new_food_prefs = {}
     food_prefs = {u"name": u"Jack",
                   u"city": u"Richmond",
                   u"cake": u"chocolate",
                   u"fruit": u"plum",
                   u"salad": u"arugula",
                   u"pasta": u"linguini"}
-    for a, number in food_prefs.items():
-        new_food_prefs[a] = number.count("a")
-        print(new_food_prefs)
+
+    print({a : number.count("a") for a, number in food_prefs.items()})
 
 problem4()
