@@ -66,9 +66,9 @@ def problem5():
 
     """
 
-    s2 = set(range(0, 21)[::2])
-    s3 = set(range(0, 21)[::3])
-    s4 = set(range(0, 21)[::4])
+    s2 = set([range(0, 21, 2)])
+    s3 = set([range(0, 21, 3)])
+    s4 = set([range(0, 21, 4)])
     print(s2)
     print(s3)
     print(s4)
