@@ -3,15 +3,12 @@ def multiple_errors():
 
     try:
         obvious_error()
-        various_types = '3' + 3
     except (TypeError, NameError) as bad_stuff:
         print type(bad_stuff)
         print(bad_stuff)
 
 multiple_errors()
 # This example only prints one exception
-
-
 
 def finally_corrected():
     """Check to see of I can clean up error with 'finally'."""
