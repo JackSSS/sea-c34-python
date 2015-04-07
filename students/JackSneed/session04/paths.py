@@ -1,13 +1,11 @@
-def path():
-    """Is it possible to print a directory?"""
+#!/usr/bin/python
 
-    from os import directory
+import os, sys
+"""Is it possible to print a directory?"""
 
+path = "/Desktop/codefellowfiles/sea-c34-python/sea-c34-python/students/\
+        JackSneed/session04"
+dirs = os.listdir(path)
 
-    path = "./directory"
-    for i in directory(path):
-        print(i)
-
-path()
-# I know this isn't ideal for obvious reasons but wanted to try.
-# There was no memory hurt in the making of this function.
+for i in dirs:
+   print i
