@@ -11,8 +11,6 @@ def read():
 
 read()
 
-
-
 def write():
     """Can I create text file?"""
 
@@ -20,7 +18,7 @@ def write():
 
     write_file = io.open('write_file.txt', 'w')
     for i in range(14):
-        write_file.write("Add line: %i\n"%i)
+        write_file.write("Add line: %i\n" % i)
         print(write_file)
 
 write()
