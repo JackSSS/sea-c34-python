@@ -47,10 +47,10 @@ def thank_you():
 
 def add_donation():
     """Adds donation amount and checks if a number"""
-    add_donation.amount = (float(raw_input(u"Enter donation amount" +
-                                           " Ex: 25.00: ")))
+    add_donation.amount = raw_input(u"Enter donation amount" +
+                                    " Ex: 25.00: ")
 
-    if type(add_donation.amount) == float:
+    if add_donation.amount.isdigit():
         donors[thank_you.gotmail].append([add_donation.amount])
         letter()
     else:
