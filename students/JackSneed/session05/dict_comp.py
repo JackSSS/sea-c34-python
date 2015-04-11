@@ -33,7 +33,7 @@ def problem3():
     comprehension – should be a one-liner.
 
     """
-    print({numbers : hex(numbers) for numbers in range(0, 16)})
+    print({numbers: hex(numbers) for numbers in range(0, 16)})
 
 problem3()
 
@@ -51,7 +51,7 @@ def problem4():
                   u"salad": u"arugula",
                   u"pasta": u"linguini"}
 
-    print({a : number.count("a") for a, number in food_prefs.items()})
+    print({num: number.count("a") for num, number in food_prefs.items()})
 
 problem4()
 
@@ -62,9 +62,9 @@ def problem5():
     divisible 2, 3 and 4.
 
     """
-    s2 = set([range(0, 21, 2)])
-    s3 = set([range(0, 21, 3)])
-    s4 = set([range(0, 21, 4)])
+    s2 = [i for i in range(0, 21) if i % 2 == 0]
+    s3 = [i for i in range(0, 21) if i % 3 == 0]
+    s4 = [i for i in range(0, 21) if i % 4 == 0]
     print(s2)
     print(s3)
     print(s4)
