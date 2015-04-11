@@ -20,7 +20,6 @@ def problem2():
     from zero to fifteen and the hexadecimal equivalent.
 
     """
-
     numbers = range(0, 16)
     result = dict(zip(numbers, [hex(hexadecimal) for hexadecimal in numbers]))
     print(result)
@@ -34,7 +33,6 @@ def problem3():
     comprehension – should be a one-liner.
 
     """
-
     print({numbers : hex(numbers) for numbers in range(0, 16)})
 
 problem3()
@@ -46,7 +44,6 @@ def problem4():
     keys but with the number of ‘a’s in each value.
 
     """
-
     food_prefs = {u"name": u"Jack",
                   u"city": u"Richmond",
                   u"cake": u"chocolate",
@@ -65,7 +62,6 @@ def problem5():
     divisible 2, 3 and 4.
 
     """
-
     s2 = set([range(0, 21, 2)])
     s3 = set([range(0, 21, 3)])
     s4 = set([range(0, 21, 4)])
