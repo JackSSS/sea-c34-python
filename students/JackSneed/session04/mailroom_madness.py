@@ -50,7 +50,7 @@ def add_donation():
     add_donation.amount = raw_input(u"Enter donation amount" +
                                     " Ex: 25.00: ")
 
-    if add_donation.amount.isdigit():
+    if add_donation.amount[0].isdigit():
         donors[thank_you.gotmail].append([add_donation.amount])
         letter()
     else:
