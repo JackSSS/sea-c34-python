@@ -9,7 +9,6 @@ def lamday():
 
 lamday()
 
-
 def filtering():
     """Can I filter out a large list of numbers divisible by 4?"""
 
@@ -18,7 +17,6 @@ def filtering():
     print quarter
 
 filtering()
-
 
 def reduction():
     """Can I reduce and get the product od two list?"""
