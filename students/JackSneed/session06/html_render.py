@@ -6,15 +6,19 @@ class Element(object):
     tag = u"html"
     indent = u"    "
 
-    def __init__(self, content=None):
+    def __init__(self, content=None, **kwargs):
         self.el = [str(content)] if content else []
+        self.attributes = kwargs
+        self.attr = u""
+        for k, v in self.attributes.items():
+            self.attr += u" %s = %s" % (k, v)
 
     def append(self, string):
         self.el.append(string)
 
     def render(self, file_out, ind=""):
 
-        file_out.write(ind + "<" + self.tag + ">\n")
+        file_out.write(ind + "<" + self.tag + self.attr + ">\n")
         for i in self.el:
             try:
                 i.render(file_out, self.indent + ind)
