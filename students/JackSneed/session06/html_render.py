@@ -16,7 +16,7 @@ class Element(object):
     def append(self, string):
         self.el.append(string)
 
-    def render(self, file_out, ind=""):
+    def render(self, file_out, ind=u""):
 
         file_out.write(ind + "<" + self.tag + self.attr + ">\n")
         for i in self.el:
@@ -29,12 +29,12 @@ class Element(object):
 
 class OneLineTag(Element):
 
-    def render(self, file_out, ind=""):
+    def render(self, file_out, ind=u""):
 
         file_out.write(ind + "<" + self.tag + ">")
         for i in self.el:
             try:
-                i.render(file_out, ind="")
+                i.render(file_out, ind=u"")
             except AttributeError:
                 file_out.write(unicode(i))
 
@@ -44,7 +44,7 @@ class Html(Element):
     header = u"<!DOCTYPE html>\n"
     tag = u"html"
 
-    def render(self, file_out, indent=""):
+    def render(self, file_out, indent=u""):
 
         file_out.write('<!DOCTYPE html>\n')
         Element.render(self, file_out, indent)
@@ -75,6 +75,21 @@ class Br(SelfClosingTag):
 class A(OneLineTag):
     tag = u'a'
 
-    def __init__(self, link, content):
+    def __init__(self, link, content=None):
         self.link = link
         Element.__init__(self, content, href=link)
+
+class Ul(Element):
+    tag = u"ul"
+
+
+class Li(Element):
+    tag = u"li"
+
+
+class H(OneLineTag):
+    tag = u"h"
+
+    def __init__(self, level, content=None):
+        self.tag = "%s%i" % (H.tag, level)
+        Element.__init__(self, content)
