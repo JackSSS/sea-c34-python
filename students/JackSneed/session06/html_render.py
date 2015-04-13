@@ -52,6 +52,9 @@ class Html(Element):
 class Head(Element):
     tag = u"head"
 
+class Meta(SelfClosingTag):
+    tag = u"meta"
+
 class Body(Element):
     tag = u"body"
 
