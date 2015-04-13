@@ -15,7 +15,6 @@ class Element(object):
     def render(self, file_out, ind=""):
 
         file_out.write(ind + "<" + self.tag + ">\n")
-
         for i in self.el:
             try:
                 i.render(file_out, self.indent + ind)
@@ -24,12 +23,32 @@ class Element(object):
 
         file_out.write(ind + "</" + self.tag + ">\n")
 
+class OneLineTag(Element):
+
+    def render(self, file_out, ind=""):
+
+        file_out.write(ind + "<" + self.tag + ">")
+        for i in self.el:
+            try:
+                i.render(file_out, ind="")
+            except AttributeError:
+                file_out.write(unicode(i))
+
+        file_out.write("</" + self.tag + ">\n")
+
 class Html(Element):
     header = u"<!DOCTYPE html>\n"
     tag = u"html"
 
+class Head(Element):
+    tag = u"head"
+
 class Body(Element):
     tag = u"body"
 
+class Title(OneLineTag):
+    tag = u"title"
+
 class P(Element):
     tag = u"p"
+
