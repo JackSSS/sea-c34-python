@@ -44,6 +44,11 @@ class Html(Element):
     header = u"<!DOCTYPE html>\n"
     tag = u"html"
 
+    def render(self, file_out, indent=""):
+
+        file_out.write('<!DOCTYPE html>\n')
+        Element.render(self, file_out, indent)
+
 class Head(Element):
     tag = u"head"
 
