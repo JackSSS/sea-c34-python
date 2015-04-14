@@ -13,6 +13,7 @@ def safe_input(key):
         input_error = None
     return input_error
 
+
 def start_program():
     """Creates selection menu"""
     menu = raw_input(u'Enter 1 for "Send a Thank You"' +
@@ -27,6 +28,7 @@ def start_program():
         else:
             menu == u"3"
             quit()
+
 
 def thank_you():
     """Creates thank you letter menu"""
@@ -45,6 +47,7 @@ def thank_you():
                   to add their donotion.")
             thank_you()
 
+
 def add_donation():
     """Adds donation amount and checks if a number"""
     add_donation.amount = raw_input(u"Enter donation amount" +
@@ -57,9 +60,10 @@ def add_donation():
         print(u"Please enter a number and include a decimal Ex: 25.00")
         add_donation()
 
+
 def letter():
     """Generates thank you letter with donor name and amount"""
-    thanks =  u"\n\nDear {},\n \n\nThank you for the donation, of ${}!\n\
+    thanks = u"\n\nDear {},\n \n\nThank you for the donation, of ${}!\n\
     \nYour continued support is greatly appreciated.\n\
     \nPlease retain this letter for tax purposes.\n\n\
     \nYours truly,\n\
@@ -67,6 +71,7 @@ def letter():
 
     print(thanks)
     start_program()
+
 
 def donor_report():
     """Creates a report with total historical donation amount. Including donor
@@ -78,7 +83,7 @@ def donor_report():
     for name, amount in donors.items():
         total_donations = sum(amount)
         num_donations = len(amount)
-        avg_donations = (total_donations/num_donations)
+        avg_donations = (total_donations / num_donations)
         report.append((name, total_donations, num_donations, avg_donations))
 
     print("{:20} {:20} {:20} {:20}\n".format(
@@ -90,6 +95,7 @@ def donor_report():
               row[0], row[1], row[2], row[3]))
 
     start_program()
+
 
 def quit():
 
