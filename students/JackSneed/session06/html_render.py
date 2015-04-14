@@ -92,6 +92,7 @@ class A(OneLineTag):
         self.link = link
         Element.__init__(self, content, href=link)
 
+
 class Ul(Element):
     tag = u"ul"
 
