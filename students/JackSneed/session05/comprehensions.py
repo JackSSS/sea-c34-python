@@ -1,6 +1,5 @@
 def comprehend():
     """Can a replicate a traditional for loop with comprehension?"""
-
     numbers = range(10)
 
     hard_copy = []
@@ -19,7 +18,6 @@ def make_a_float():
     value?
 
     """
-
     numbers = range(0, 16)
     float_value = dict(zip(numbers, [float(f_number) for f_number in numbers]))
     print float_value
@@ -28,7 +26,6 @@ make_a_float()
 
 def math_stuff():
     """Can I get the value of key * 11?"""
-
     equation = {i: i*2 for i in range(1, 6)}
     print(equation)
 
