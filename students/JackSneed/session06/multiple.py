@@ -1,7 +1,5 @@
 # Can a child class run the functions of several parents with
 # multiple inheritance?
-
-
 class Color1(object):
 
     def red(self):
@@ -21,6 +19,7 @@ class Color3(object):
 
 class Mix(Color1, Color2, Color3):
     pass
+
 
 cb = Mix()
 cb.red()

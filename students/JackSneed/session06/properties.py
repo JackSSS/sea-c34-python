@@ -5,6 +5,8 @@ class Mix(object):
             self._x = x
             self._y = y
             self._z = z
+
+
         def fget(self):
             print self._x
             print self._y
