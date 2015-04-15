@@ -11,7 +11,7 @@ class Element(object):
         self.attributes = kwargs
         self.attr = u""
         for k, v in self.attributes.items():
-            self.attr += u" %s = %s" % (k, v)
+            self.attr += u'%s="%s"' % (k, v)
 
     def append(self, string):
         self.el.append(string)
@@ -54,7 +54,7 @@ class Html(Element):
 
 class SelfClosingTag(Element):
     def render(self, file_out, ind=u""):
-        file_out.write(ind + "<" + self.tag + self.attr + "> \n")
+        file_out.write(ind + "</" + self.tag + self.attr + "> \n")
 
 
 class Head(Element):
