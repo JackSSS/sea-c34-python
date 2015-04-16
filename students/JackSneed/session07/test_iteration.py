@@ -2,4 +2,4 @@ import iteration as i
 
 
 def test_roots():
-    assert i.roots(2.236328125) == sqrt
+    assert sqrt == 2.236328125
